@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-private
+  serialization_scope :view_context
+
+protected
 
   def current_user
     OpenStruct.new(admin?: false)
